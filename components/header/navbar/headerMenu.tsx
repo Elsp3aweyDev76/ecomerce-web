@@ -4,7 +4,7 @@ import React from "react";
 
 function HeaderMenu() {
   return (
-    <div className="flex items-center gap-6">
+    <div className="hidden md:flex items-center gap-6">
       {headerData?.map((item) => (
         <Link
           key={item?.title}

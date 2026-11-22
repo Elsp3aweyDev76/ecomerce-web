@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -18,7 +19,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <ClerkProvider>
       <html lang="en" className={cn("font-sans", inter.variable)}>
         <body className="font-poppins antialiased">
-          <Header />
+          <Suspense
+            fallback={
+              <header className="h-16 bg-white border-b border-gray-200" />
+            }
+          >
+            <Header />
+          </Suspense>
           {children}
           <Footer />
         </body>

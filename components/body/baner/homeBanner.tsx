@@ -90,7 +90,7 @@ function HomeBanner() {
         </div>
 
         {/* منطقة عرض الصورة الحالية */}
-        <div className="relative w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[460px] h-72 sm:h-80 lg:h-96 flex items-end justify-center shrink-0 overflow-hidden">
+        <div className="relative w-full max-w-85 sm:max-w-100 lg:max-w-115 h-72 sm:h-80 lg:h-96 flex items-end justify-center shrink-0 overflow-hidden">
           <Image
             key={currentSlide.id}
             src={currentSlide.image}
@@ -98,7 +98,7 @@ function HomeBanner() {
             className="w-full h-full object-contain object-bottom transition-all duration-300"
             priority={currentIndex === 0}
           />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-shop_light_pink via-shop_light_pink/70 to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-shop_light_pink via-shop_light_pink/70 to-transparent" />
         </div>
       </div>
 

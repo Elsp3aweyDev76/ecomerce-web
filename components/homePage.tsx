@@ -1,12 +1,14 @@
-import Container from "./container";
-import HomeBanner from "./body/baner/homeBanner";
+import { getAllProducts } from "@/sanity/lib/queries";
+import HomeBanner from "../components/body/baner/homeBanner"; // عدّل المسار حسب مشروعك
+import FeaturedProducts from "./body/featured-products";
 
-function HomePage() {
+export default async function HomePage() {
+  const products = await getAllProducts();
+
   return (
-    <Container className="bg-shop-light-pink">
+    <main>
       <HomeBanner />
-    </Container>
+      <FeaturedProducts products={products} />
+    </main>
   );
 }
-
-export default HomePage;

@@ -4,6 +4,7 @@ import { FaYoutube, FaGithub, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { MapPin, Phone, Clock, Mail } from "lucide-react";
 import Title from "@/components/ui/text";
 import { NewsletterForm } from "./newsletter-form";
+import { cn } from "@/lib/utils";
 
 const CONTACT_ITEMS = [
   {
@@ -185,8 +186,18 @@ function SmartFooter() {
 
         {/* شريط الحقوق السفلي */}
         <div className="pt-6 text-center text-xs sm:text-sm text-gray-500">
-          © 2026 <span className="font-semibold text-gray-900">SHOPCART</span>.
-          All rights reserved.
+          © 2026{" "}
+          <h2
+            className={cn(
+              "text-2xl font-extrabold tracking-tight   text-gray-900 transition-colors duration-300",
+            )}
+          >
+            My Shoppin
+            <span className="text-emerald-600 transition-colors duration-300 group-hover:text-emerald-800">
+              g
+            </span>
+          </h2>
+          . All rights reserved.
         </div>
       </div>
     </footer>

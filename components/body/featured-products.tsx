@@ -30,9 +30,17 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
   const [showFilters, setShowFilters] = useState(false);
   const [onlyInStock, setOnlyInStock] = useState(false);
 
-  // ترتيب وفلترة المنتجات
+  // ترتيب وفلترة المنتجات حسب التبويب، المخزون، والترتيب
   const filteredProducts = useMemo(() => {
     let result = [...products];
+
+    if (selectedTab) {
+      result = result.filter((p) =>
+        p.categories?.some(
+          (cat) => cat.toLowerCase() === selectedTab.toLowerCase(),
+        ),
+      );
+    }
 
     if (onlyInStock) {
       result = result.filter((p) => (p.stock ?? 0) > 0);
@@ -47,7 +55,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
     });
 
     return result;
-  }, [products, onlyInStock, sortBy]);
+  }, [products, selectedTab, onlyInStock, sortBy]);
 
   const gridClasses: Record<ViewMode, string> = {
     "grid-5": "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5",

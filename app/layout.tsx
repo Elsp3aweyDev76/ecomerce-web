@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header/navbar/page";
 import Footer from "@/components/footer/footer";
+import ScrollNavbar from "@/components/header/navbar/scroll-navbar";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -22,7 +23,13 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" className={cn("font-sans", inter.variable)}>
         <body className="font-poppins antialiased">
-          <Header />
+          <ScrollNavbar
+            threshold={80}
+            scrolledClassName="bg-white/95 backdrop-blur-md border-b border-gray-200"
+          >
+            <Header />
+          </ScrollNavbar>
+
           {children}
           <Footer />
         </body>

@@ -12,6 +12,7 @@ export interface SanityProduct {
   images?: string[];
   categories?: string[];
 }
+
 export const ALL_PRODUCTS_QUERY = `*[_type == "product"] | order(_createdAt desc) {
   _id,
   name,
@@ -21,6 +22,7 @@ export const ALL_PRODUCTS_QUERY = `*[_type == "product"] | order(_createdAt desc
   discount,
   stock,
   status,
+  categories,
   "images": images[].asset->url
 }`;
 

@@ -59,5 +59,19 @@ export const productType = defineType({
         ],
       },
     }),
+    defineField({
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "string" }],
+      options: {
+        list: [
+          { title: "Gadget", value: "Gadget" },
+          { title: "Appliances", value: "Appliances" },
+          { title: "Refrigerators", value: "Refrigerators" },
+          { title: "Others", value: "Others" },
+        ],
+      },
+    }),
   ],
 });

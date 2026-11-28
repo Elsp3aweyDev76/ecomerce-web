@@ -42,10 +42,8 @@ export default function ProductCard({
     >
       {/* Image Container */}
       <div
-        className={`relative bg-[#f6f6f6] overflow-hidden flex items-center justify-center ${
-          viewMode === "list"
-            ? "w-full sm:w-60 h-60 shrink-0"
-            : "w-full h-64"
+        className={`relative bg-shop_light_bg overflow-hidden flex items-center justify-center ${
+          viewMode === "list" ? "w-full sm:w-60 h-60 shrink-0" : "w-full h-64"
         }`}
       >
         {/* Status Badge (Top Left) */}
